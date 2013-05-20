@@ -4,4 +4,9 @@
     <string name="app_name">AndroidTabLayout</string>
     <string name="ConfTab_title">Dispositivo: </string>
     <string name="ConfTab_mac">MAC Address: </string>
+    <string name="ConfTab_alert">Tipo de alerta:</string>
+    <string name="radioOptionVoice">Voz</string>
+    <string name="radioOptionTone">Tono</string>
+    <string name="radioOptionSong">Canción</string>
+    <string name="radioOptionVibr">Vibración</string>
 </resources>

@@ -1,0 +1,1 @@
+Repositorio referente al proyecto de computo ubicuo
