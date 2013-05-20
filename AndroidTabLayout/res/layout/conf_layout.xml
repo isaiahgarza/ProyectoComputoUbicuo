@@ -5,9 +5,21 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent">
   
-  <!-- Screen Design for the SONGS -->
+  <!-- Screen Design for the Configuration -->
   <TextView 
-      		android:text="CONFIG AQUI"
+      		android:text="@string/ConfTab_title"
+  			android:padding="15dip"
+  			android:textSize="18dip"
+  			android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"/>
+    <TextView 
+      		android:text="@string/ConfTab_mac"
+  			android:padding="15dip"
+  			android:textSize="18dip"
+  			android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"/>
+      <TextView 
+      		android:text="ALGO AQUI"
   			android:padding="15dip"
   			android:textSize="18dip"
   			android:layout_width="fill_parent"

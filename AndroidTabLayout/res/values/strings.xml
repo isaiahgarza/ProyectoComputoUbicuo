@@ -2,4 +2,6 @@
 <resources>
     <string name="hello">Hello World, AndroidTabLayoutActivity!</string>
     <string name="app_name">AndroidTabLayout</string>
+    <string name="ConfTab_title">Dispositivo: </string>
+    <string name="ConfTab_mac">MAC Address: </string>
 </resources>
