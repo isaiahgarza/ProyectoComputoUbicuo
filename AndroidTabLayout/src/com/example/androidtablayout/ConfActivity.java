@@ -3,10 +3,13 @@ package com.example.androidtablayout;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public class ConfActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
@@ -26,18 +29,23 @@ public class ConfActivity extends Activity {
     	switch(buttonID){
     	case R.id.radio_voice:
     		chos = "VOICE";
+    		savePref("Alert", chos);
     		break;
     	case R.id.radio_tone:
     		chos = "TONE";
+    		savePref("Alert", chos);
     		break;
     	case R.id.radio_song:
     		chos = "SONG";
+    		savePref("Alert", chos);
     		break;
     	case R.id.radio_vibr:
     		chos = "VIBRATION";
+    		savePref("Alert", chos);
     		break;
     	default:
     		chos = "ERR";
+    		savePref("Alert", chos);
     		break;
     	}
     	
@@ -46,7 +54,7 @@ public class ConfActivity extends Activity {
     }
     
     public String getBTName(){
-    	android.bluetooth.BluetoothAdapter BTadapter = null;
+    	BluetoothAdapter BTadapter = null;
     	if(BTadapter == null){
     		BTadapter = BluetoothAdapter.getDefaultAdapter();
     	}
@@ -60,5 +68,13 @@ public class ConfActivity extends Activity {
     	return BTadapter.getAddress();
     }
     
-    public void saveAlertPreference(){;}
+    public void loadPref(){;}
+    
+    public void savePref(String key, String value){
+    	SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+    	Editor edit = sp.edit();
+    	edit.putString(key, value);
+    	edit.commit();
+    	System.out.println("Conf OK");
+    }
 }
