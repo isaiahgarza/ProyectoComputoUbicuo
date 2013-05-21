@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
@@ -20,6 +21,22 @@ public class ConfActivity extends Activity {
         textViewChange.setText(textViewChange.getText() + " " + getBTName());
         textViewChange = (TextView) findViewById(R.id.ConfTab_mac);
         textViewChange.setText(textViewChange.getText() + " " + getBTAddres());
+        
+        String alertPref = loadPref();
+        System.out.println("Got " + alertPref);
+        if( alertPref.equals("VOICE")){
+        	RadioButton rb = (RadioButton) findViewById(R.id.radio_voice);
+        	rb.setChecked(true);
+        }else if( alertPref.equals("TONE")){
+        	RadioButton rb = (RadioButton) findViewById(R.id.radio_tone);
+        	rb.setChecked(true);
+        }else if( alertPref.equals("SONG")){
+        	RadioButton rb = (RadioButton) findViewById(R.id.radio_song);
+        	rb.setChecked(true);
+        }else if( alertPref.equals("VIBRATION")){
+        	RadioButton rb = (RadioButton) findViewById(R.id.radio_vibr);
+        	rb.setChecked(true);
+        }
     }
     
     public void onRadioButtonClick(View v){
@@ -68,7 +85,11 @@ public class ConfActivity extends Activity {
     	return BTadapter.getAddress();
     }
     
-    public void loadPref(){;}
+    public String loadPref(){
+    	SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+    	String prefVal = sp.getString("Alert", "ERR");
+    	return prefVal;
+    }
     
     public void savePref(String key, String value){
     	SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
