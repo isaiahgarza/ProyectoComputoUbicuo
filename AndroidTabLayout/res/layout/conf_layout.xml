@@ -8,12 +8,14 @@
   <!-- Screen Design for the Configuration -->
   <TextView 
       		android:text="@string/ConfTab_title"
+      		android:id="@+id/ConfTab_title"
   			android:padding="15sp"
   			android:textSize="18sp"
   			android:layout_width="fill_parent"
   			android:layout_height="wrap_content"/>
     <TextView 
       		android:text="@string/ConfTab_mac"
+  			android:id="@+id/ConfTab_mac"
   			android:padding="15sp"
   			android:textSize="18sp"
   			android:layout_width="fill_parent"
